@@ -1,4 +1,7 @@
-package software.ulpgc.imageviewer;
+package software.ulpgc.imageviewer.swing;
+
+import software.ulpgc.imageviewer.Image;
+import software.ulpgc.imageviewer.ImageDisplay;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -8,11 +11,11 @@ import java.io.File;
 import java.io.IOException;
 
 public class SwingImageDisplay extends JPanel implements ImageDisplay {
-    private Image image;
+    private software.ulpgc.imageviewer.Image image;
     private BufferedImage bitmap;
 
     @Override
-    public void show(Image image) {
+    public void show(software.ulpgc.imageviewer.Image image) {
         this.image = image;
         this.bitmap = load(image.name());
         this.repaint();

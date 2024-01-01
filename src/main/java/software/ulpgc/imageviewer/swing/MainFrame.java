@@ -1,4 +1,7 @@
-package software.ulpgc.imageviewer;
+package software.ulpgc.imageviewer.swing;
+
+import software.ulpgc.imageviewer.Command;
+import software.ulpgc.imageviewer.ImageDisplay;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,17 +22,10 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
         add(createImageDisplay());
-        //add(createToolbar(), BorderLayout.NORTH);
         add(createButton("<"),BorderLayout.WEST);
         add(createButton(">"),BorderLayout.EAST);
     }
 
-    private Component createToolbar() {
-        JPanel panel = new JPanel();
-        panel.add(createButton("<"));
-        panel.add(createButton(">"));
-        return panel;
-    }
 
     private Component createButton(String label) {
         JButton button = new JButton(label);
